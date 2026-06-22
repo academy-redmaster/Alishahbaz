@@ -5,6 +5,7 @@ import { pdfjs, Document, Page } from "react-pdf";
 
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
+import workerSrc from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 
 // pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 //   "pdfjs-dist/build/pdf.worker.min.mjs",
@@ -12,8 +13,8 @@ import "react-pdf/dist/Page/TextLayer.css";
 // ).toString();
 
 // ========= for productions
-pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf/pdf.worker.min.mjs`;
-
+// pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf/pdf.worker.min.mjs`;
+pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
 const Resume = () => {
   return (
     <>
